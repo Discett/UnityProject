@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementCC.cs" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\LowPolyBuildings\readme.txt" />
     <None Include="Assets\Fonts\ZCOOL_KuaiLe\OFL.txt" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\Mirror 1.shader" />
     <None Include="Assets\Fonts\Reenie_Beanie\OFL.txt" />
