@@ -5106,7 +5106,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mabe
+  m_Text: 
 --- !u!222 &293932391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15551,7 +15551,6 @@ GameObject:
   - component: {fileID: 1150772587}
   - component: {fileID: 1150772589}
   - component: {fileID: 1150772588}
-  - component: {fileID: 1150772590}
   m_Layer: 5
   m_Name: TextChat
   m_TagString: Untagged
@@ -15611,7 +15610,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Oh, Landy! I didn't see you there.
+  m_Text: 
 --- !u!222 &1150772589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15620,25 +15619,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150772586}
   m_CullTransparentMesh: 0
---- !u!114 &1150772590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150772586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 093430e663aac5b468f479fba0c5ebdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1477187217}
-  playerMouse: {fileID: 1477187218}
-  dialog: {fileID: 4900000, guid: eb0d1169ef206d44bb30639b387a92c5, type: 3}
-  nameTag: {fileID: 293932390}
-  canvas: {fileID: 1230295155}
-  NPC: {fileID: 7182830744465648570}
-  interacted: 0
 --- !u!4 &1150862451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8535263057654408746, guid: 3604552a754fdc6428ef1dc6c9e414fe,
@@ -27530,6 +27510,7 @@ GameObject:
   - component: {fileID: 285839451}
   - component: {fileID: 7182830744465648570}
   - component: {fileID: 7182830744465648572}
+  - component: {fileID: 7182830744465648573}
   - component: {fileID: 7182830744465648571}
   m_Layer: 0
   m_Name: Mabe
@@ -27570,7 +27551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1250112613933840119}
-  dialog: {fileID: 1150772590}
+  dialog: {fileID: 7182830744465648573}
 --- !u!65 &7182830744465648572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27584,6 +27565,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 15, z: 16}
   m_Center: {x: 8, y: 8, z: 2}
+--- !u!114 &7182830744465648573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182830744465648569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47f48c2d4a041542af06c18fe6f7dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1150772588}
+  nameTag: {fileID: 293932390}
+  dialog: {fileID: 4900000, guid: eb0d1169ef206d44bb30639b387a92c5, type: 3}
+  player: {fileID: 1477187217}
+  playerMouse: {fileID: 1477187218}
+  focusObject: {fileID: 0}
+  canvas: {fileID: 1230295155}
+  dialogInitiated: 0
 --- !u!1 &7420928894505921900
 GameObject:
   m_ObjectHideFlags: 0

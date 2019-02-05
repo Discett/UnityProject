@@ -60,8 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CharacterDialog.cs" />
-    <Compile Include="Assets\MabeMeetingScript.cs" />
+    <Compile Include="Assets\Scripts\CharacterDialog.cs" />
+    <Compile Include="Assets\Scripts\CharacterDialogOld.cs" />
+    <Compile Include="Assets\Scripts\MabeMeetingScript.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\OldPlayerCameraMovement.cs" />
     <Compile Include="Assets\Scripts\OldPlayerMovement.cs" />
@@ -75,12 +76,14 @@
     <None Include="Assets\Fonts\Rock_Salt\LICENSE.txt" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Fonts\Press_Start_2P\OFL.txt" />
+    <None Include="Assets\Dialog\GabeNoResponse.txt" />
     <None Include="Assets\Fonts\Baloo_Thambi\OFL.txt" />
     <None Include="Assets\Dialog\GabeHallwayDialog.txt" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />
     <None Include="Assets\UrbanNightSky\Readme.txt" />
+    <None Include="Assets\Dialog\GabeFridgeResponse.txt" />
     <None Include="Assets\Fonts\Kosugi_Maru\LICENSE.txt" />
     <None Include="Assets\Fonts\VT323\OFL.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">

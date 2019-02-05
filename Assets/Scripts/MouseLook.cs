@@ -19,33 +19,61 @@ public class MouseLook : MonoBehaviour
     float rotationY = 0F;
 
     public Transform player;
+    public Transform Focus;
+    private bool isFocused = false;
+    public bool canLook = true;
 
-
+    public void enableLook()
+    {
+        canLook = true;
+    }
+    public void disableLook()
+    {
+        canLook = false;
+    }
+    public void setFocus(Transform focus)
+    {
+        Focus = focus;
+    }
+    public void startFocus()
+    {
+        isFocused = true;
+    }
+    public void stopFocus()
+    {
+        isFocused = false;
+    }
 
     void Update()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Locked;
-        //player.transform.rotation = Quaternion.Euler(0, transform.localEulerAngles.y, 0);
-        if (axes == RotationAxes.MouseXAndY)
+        if (canLook)
         {
-            float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
+            //player.transform.rotation = Quaternion.Euler(0, transform.localEulerAngles.y, 0);
+            if (axes == RotationAxes.MouseXAndY)
+            {
+                float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
 
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
+                rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+                rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
+                transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+            }
+            else if (axes == RotationAxes.MouseX)
+            {
+                transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
+            }
+            else
+            {
+                rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
+                rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
 
-            transform.localEulerAngles = new Vector3(-rotationY, rotationX, 0);
+                transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+            }
         }
-        else if (axes == RotationAxes.MouseX)
+        if (isFocused)
         {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityX, 0);
-        }
-        else
-        {
-            rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-            rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
-
-            transform.localEulerAngles = new Vector3(-rotationY, transform.localEulerAngles.y, 0);
+            transform.LookAt(Focus);
         }
     }
 }
