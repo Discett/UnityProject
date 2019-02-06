@@ -74,7 +74,7 @@ public class CharacterDialog : MonoBehaviour
                     text.text = linesInFile[counter];
                 }
                 //Change this to enter or something later
-                if (Input.GetKeyDown("f"))
+                if (Input.GetButtonDown("Submit"))
                 {
                     counter++;
                 }

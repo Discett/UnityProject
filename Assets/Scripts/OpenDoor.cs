@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    public string USEKEY = "e";
     bool open = false;
     bool inRange = false;
     private Animator animator;
@@ -57,7 +56,7 @@ public class OpenDoor : MonoBehaviour
     {
         if (inRange)
         {
-            if (Input.GetKeyDown(USEKEY))
+            if (Input.GetButtonDown("Use"))
             {
                 if (!open)
                 {
