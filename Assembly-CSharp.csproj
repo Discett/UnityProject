@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EventMabeFridgeDoor.cs" />
     <Compile Include="Assets\Scripts\CharacterDialog.cs" />
     <Compile Include="Assets\Scripts\MabeMeetingScript.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />

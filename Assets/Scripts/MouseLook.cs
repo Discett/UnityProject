@@ -20,6 +20,7 @@ public class MouseLook : MonoBehaviour
 
     public Transform player;
     public Transform Focus;
+    public float focusSpeed = 20f;
     private bool isFocused = false;
     public bool canLook = true;
 
@@ -73,7 +74,13 @@ public class MouseLook : MonoBehaviour
         }
         if (isFocused)
         {
-            transform.LookAt(Focus);
+            //transform.LookAt(Focus);
+            Vector3 targetDir = Focus.position - transform.position;
+            float step = focusSpeed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+            Debug.DrawRay(transform.position, newDir, Color.red);
+            transform.rotation = Quaternion.LookRotation(newDir);
+
         }
     }
 }

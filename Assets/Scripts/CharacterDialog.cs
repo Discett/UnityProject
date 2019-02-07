@@ -14,6 +14,7 @@ public class CharacterDialog : MonoBehaviour
     public PlayerMovementCC player;
     public MouseLook playerMouse;
     public Transform focusObject;
+    public bool repeatable = false;
 
     public Canvas canvas;
     string[] linesInFile;
@@ -87,6 +88,10 @@ public class CharacterDialog : MonoBehaviour
                 dialogInitiated = false;
                 dialogFinished = true;
                 playerMouse.stopFocus();
+                if (repeatable)
+                {
+                    counter = 0;
+                }
             }
         }
     }
