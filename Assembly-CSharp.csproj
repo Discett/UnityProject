@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\OldPlayerMovement.cs" />
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementCC.cs" />
+    <Compile Include="Assets\Scripts\ShowUsePrompt.cs" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\LowPolyBuildings\readme.txt" />
     <None Include="Assets\Fonts\ZCOOL_KuaiLe\OFL.txt" />

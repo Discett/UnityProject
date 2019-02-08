@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class OpenDoor : MonoBehaviour
 {
@@ -38,7 +40,6 @@ public class OpenDoor : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("Enter");
             inRange = true;
         }
     }
@@ -47,7 +48,6 @@ public class OpenDoor : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("Exit");
             inRange = false;
         }
     }

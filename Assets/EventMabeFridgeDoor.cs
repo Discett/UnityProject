@@ -1,19 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventMabeFridgeDoor : MonoBehaviour
 {
     public CharacterDialog dialog;
     private bool inRange = false;
 
+
+
     private void OnTriggerEnter(Collider other)
     {
-        inRange = true;
+        if(other.tag == "Player")
+        {
+            inRange = true;
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        inRange = false;
+        if(other.tag == "Player")
+        {
+            inRange = false;
+        }
+    }
+    private void startDialog()
+    {
+        dialog.startDialog();
     }
     // Update is called once per frame
     void Update()
@@ -22,7 +36,7 @@ public class EventMabeFridgeDoor : MonoBehaviour
         {
             if(Input.GetButtonDown("Use"))
             {
-                dialog.startDialog();
+                Invoke("startDialog", 2f);
             }
         }
     }

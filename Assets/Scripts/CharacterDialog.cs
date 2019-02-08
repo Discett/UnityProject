@@ -4,19 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CharacterDialog : MonoBehaviour
 {
+    //This is for the dialogBox image
+    public Image imageBox;
     //This is for displaying dialog
-    public Text text;
+    public Text dialogText;
     //This is for displayer who is talking
     public Text nameTag;
     //This is for the file for what is going to be said
-    public TextAsset dialog;
+    public TextAsset dialogScript;
     //We want to influence the player when in a dialog so we can set options
     public PlayerMovementCC player;
     public MouseLook playerMouse;
     public Transform focusObject;
     public bool repeatable = false;
 
-    public Canvas canvas;
     string[] linesInFile;
     private int counter = 0;
     public bool dialogInitiated = false;
@@ -24,8 +25,10 @@ public class CharacterDialog : MonoBehaviour
 
     void Start()
     {
-        linesInFile = dialog.text.Split('\n');
-        canvas.enabled = false;
+        linesInFile = dialogScript.text.Split('\n');
+        imageBox.enabled = false;
+        dialogText.enabled = false;
+        nameTag.enabled = false;
     }
 
     public void startDialog()
@@ -56,7 +59,9 @@ public class CharacterDialog : MonoBehaviour
         {
             if (linesInFile.Length > counter)
             {
-                canvas.enabled = true;
+                imageBox.enabled = true;
+                dialogText.enabled = true;
+                nameTag.enabled = true;
                 player.enabled = false;
                 playerMouse.disableLook();
                 if (focusObject)
@@ -72,7 +77,7 @@ public class CharacterDialog : MonoBehaviour
                 }
                 else
                 {
-                    text.text = linesInFile[counter];
+                    dialogText.text = linesInFile[counter];
                 }
                 //Change this to enter or something later
                 if (Input.GetButtonDown("Submit"))
@@ -82,7 +87,9 @@ public class CharacterDialog : MonoBehaviour
             }
             else
             {
-                canvas.enabled = false;
+                imageBox.enabled = false;
+                nameTag.enabled = false;
+                dialogText.enabled = false;
                 player.enabled = true;
                 playerMouse.enableLook();
                 dialogInitiated = false;
