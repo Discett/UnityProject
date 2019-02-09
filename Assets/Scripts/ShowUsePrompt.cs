@@ -9,6 +9,7 @@ public class ShowUsePrompt : MonoBehaviour
     public bool hideAfterUse = false;
     private bool isHidden = false;
     private bool inRange = false;
+    public string promptText;
     // Start is called before the first frame update
 
     void Start()
@@ -29,6 +30,7 @@ public class ShowUsePrompt : MonoBehaviour
             textPrompt.enabled = false;
         } else
         {
+            textPrompt.text = promptText;
             textPrompt.enabled = true;
         }
     }

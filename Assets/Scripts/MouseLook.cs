@@ -47,7 +47,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        Cursor.visible = true;
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         if (canLook)
         {
