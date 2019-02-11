@@ -17,6 +17,7 @@ public class CharacterDialog : MonoBehaviour
     public MouseLook playerMouse;
     public Transform focusObject;
     public bool repeatable = false;
+    public float focusSpeed = 20f;
 
     string[] linesInFile;
     private int counter = 0;

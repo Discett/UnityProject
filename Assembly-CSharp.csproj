@@ -60,10 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EventMabeFridgeDoor.cs" />
-    <Compile Include="Assets\MabeBedEvent.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Scripts\CharacterDialog.cs" />
+    <Compile Include="Assets\Scripts\EventMabeFridgeDoor.cs" />
+    <Compile Include="Assets\Scripts\MabeBedEvent.cs" />
+    <Compile Include="Assets\Scripts\MabeDoorKnock.cs" />
     <Compile Include="Assets\Scripts\MabeMeetingScript.cs" />
+    <Compile Include="Assets\Scripts\MosiahSelanieMeeting.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\OldPlayerCameraMovement.cs" />
     <Compile Include="Assets\Scripts\OldPlayerMovement.cs" />
@@ -78,11 +81,13 @@
     <None Include="Assets\Fonts\Rock_Salt\LICENSE.txt" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Fonts\Press_Start_2P\OFL.txt" />
+    <None Include="Assets\Dialog\SelanieVisit.txt" />
     <None Include="Assets\Dialog\GabeNoResponse.txt" />
     <None Include="Assets\Fonts\Baloo_Thambi\OFL.txt" />
     <None Include="Assets\Dialog\GabeHallwayDialog.txt" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Dialog\MosiahVisit.txt" />
     <None Include="Assets\Dialog\GabeGoodNight.txt" />
     <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />
     <None Include="Assets\UrbanNightSky\Readme.txt" />

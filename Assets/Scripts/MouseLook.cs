@@ -44,6 +44,10 @@ public class MouseLook : MonoBehaviour
     {
         isFocused = false;
     }
+    public void setFocusSpeed(float x)
+    {
+        focusSpeed = x;
+    }
 
     void Update()
     {
