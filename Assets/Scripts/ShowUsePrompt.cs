@@ -17,6 +17,12 @@ public class ShowUsePrompt : MonoBehaviour
         textPrompt.enabled = false;
     }
 
+    public void setPromptText(string text)
+    {
+        promptText = text;
+        showPrompt();
+    }
+
     private void hidePrompt()
     {
         textPrompt.enabled = false;

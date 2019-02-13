@@ -12,6 +12,7 @@ public class MosiahSelanieMeeting : MonoBehaviour
     public Animator mosiah;
     public Animator selanie;
     public Animator door;
+    public string promptText = "Press \"Use\" to answer the door";
     private bool mosiahFinished = false;
 
     private void OnTriggerEnter(Collider other)
@@ -47,14 +48,21 @@ public class MosiahSelanieMeeting : MonoBehaviour
     }
     void Update()
     {
+        if(inRange && !FindObjectOfType<GameManager>().getMosiahSelanieGreeting())
+        {
+            prompt.setPromptText(promptText);
+        } else
+        {
+            prompt.setPromptText("");
+        }
+
         if (inRange && Input.GetButtonDown("Use"))
         {
+            prompt.setPromptText("");
             mosiah.SetBool("Mosiah&SelanieMeeting", true);
             selanie.SetBool("Mosiah&SelanieMeeting", true);
             door.SetBool("open", true);
-
             Invoke("MosiahTalk", 1f);
-            
         }
 
         if (dialogMosiah.isDialogFinished() && !mosiahFinished)
@@ -68,6 +76,7 @@ public class MosiahSelanieMeeting : MonoBehaviour
             FindObjectOfType<GameManager>().triggeredMosiahSelanieGreeting();
             door.SetBool("open", false);
             Invoke("characterExit", 3f);
+            this.enabled = false;
         }
 
     }
