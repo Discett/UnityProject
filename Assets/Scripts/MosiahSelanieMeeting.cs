@@ -51,10 +51,7 @@ public class MosiahSelanieMeeting : MonoBehaviour
         if(inRange && !FindObjectOfType<GameManager>().getMosiahSelanieGreeting())
         {
             prompt.setPromptText(promptText);
-        } else
-        {
-            prompt.setPromptText("");
-        }
+        } 
 
         if (inRange && Input.GetButtonDown("Use"))
         {
@@ -75,8 +72,9 @@ public class MosiahSelanieMeeting : MonoBehaviour
         {
             FindObjectOfType<GameManager>().triggeredMosiahSelanieGreeting();
             door.SetBool("open", false);
-            Invoke("characterExit", 3f);
+            Invoke("characterExit", 120f);
             this.enabled = false;
+            prompt.setPromptText("");
         }
 
     }

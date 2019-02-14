@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke("startMosiahSelanieMeeting", 120f);
+        Invoke("startMosiahSelanieMeeting", 3f);
     }
 
 }
