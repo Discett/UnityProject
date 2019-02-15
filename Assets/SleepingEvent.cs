@@ -13,6 +13,9 @@ public class SleepingEvent : MonoBehaviour
     public CharacterDialog dialog;
     public Animator sleepAnimator;
     public Light bedroomLight;
+    public Animator doorAnimator;
+    public Animator visitor;
+    public CharacterDialog visitorDialog;
     bool inRange = false;
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +36,16 @@ public class SleepingEvent : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
     }
+    public void startVisitorDialog()
+    {
+        visitorDialog.startDialog();
+    }
+    public void visitorEvent()
+    {
+        doorAnimator.SetTrigger("visitor");
+        visitor.SetTrigger("start");
+        Invoke("startVisitorDialog",2f);
+    }
 
     void Update()
     {
@@ -44,10 +57,10 @@ public class SleepingEvent : MonoBehaviour
                 playerCamera.SetActive(false);
                 playerSleepingBody.SetActive(true);
                 bedroomLight.enabled = false;
+                doorAnimator.SetBool("open", false);
                 sleepCamera.SetActive(true);
                 sleepAnimator.SetTrigger("look");
-                //Character Event
-                Debug.Log("EventCharacterHere");
+                Invoke("visitorEvent", 1.5f);
             } else
             {
                 dialog.startDialog();

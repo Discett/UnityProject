@@ -87,6 +87,7 @@
     <None Include="Assets\Dialog\SelanieVisit.txt" />
     <None Include="Assets\Dialog\GabeNoResponse.txt" />
     <None Include="Assets\Fonts\Baloo_Thambi\OFL.txt" />
+    <None Include="Assets\Dialog\BdrianVisit.txt" />
     <None Include="Assets\Dialog\LandyWaitingOnVisitFromFriends.txt" />
     <None Include="Assets\Dialog\GabeHallwayDialog.txt" />
     <None Include="Assets\VoxelCharacters\ToonShading\Shaders\ToonLitOutline.shader" />
