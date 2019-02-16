@@ -6394,6 +6394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05231276c746e53459fe6a489ce58747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpen: {fileID: 0}
+  doorClose: {fileID: 0}
 --- !u!95 &536596880
 Animator:
   serializedVersion: 3
@@ -13595,6 +13597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05231276c746e53459fe6a489ce58747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorOpen: {fileID: 8300000, guid: 460e46e18fb237c4e880a31b265a323b, type: 3}
+  doorClose: {fileID: 8300000, guid: a89631699194cd54da6aadcc66e21632, type: 3}
 --- !u!65 &1173496845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20929,6 +20933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bdrian
       objectReference: {fileID: 0}
+    - target: {fileID: 95000014224244900, guid: 4727d196f51509b4aaf256e5123234ac,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 99a5a234bcd41bd41a690ffa22d2a327, type: 2}
     - target: {fileID: 4000010874950422, guid: 4727d196f51509b4aaf256e5123234ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.83
@@ -20985,11 +20994,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 95000014224244900, guid: 4727d196f51509b4aaf256e5123234ac,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 99a5a234bcd41bd41a690ffa22d2a327, type: 2}
     - target: {fileID: 4000011824926194, guid: 4727d196f51509b4aaf256e5123234ac, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.0000025362185

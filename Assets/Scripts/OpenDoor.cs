@@ -6,36 +6,27 @@ using UnityEngine.UI;
 
 public class OpenDoor : MonoBehaviour
 {
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
     bool open = false;
     bool inRange = false;
     private Animator animator;
+
+    public void audioPlayOpen()
+    {
+        AudioSource.PlayClipAtPoint(doorOpen,transform.position);
+    }
+
+    public void audioPlayClose()
+    {
+        AudioSource.PlayClipAtPoint(doorClose, transform.position);
+    }
 
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
-    /*
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            if (Input.GetKeyDown(USEKEY))
-            {
-                if (!open)
-                {
-                    animator.SetBool("open", true);
-                    open = true;
-                }
-                else
-                {
-                    animator.SetBool("open", false);
-                    open = false;
-                }
-            }
-            
-        }
-    }
-    */
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
