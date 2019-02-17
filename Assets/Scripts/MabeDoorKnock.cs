@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MabeDoorKnock : MonoBehaviour
 {
-
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
     private bool inRange;
     public CharacterDialog dialog;
     private void OnTriggerEnter(Collider other)
@@ -27,5 +28,14 @@ public class MabeDoorKnock : MonoBehaviour
         {
             dialog.startDialog();
         }
+    }
+
+    public void audioDoorOpen()
+    {
+        AudioSource.PlayClipAtPoint(doorOpen,transform.position);
+    }
+    public void audioDoorClose()
+    {
+        AudioSource.PlayClipAtPoint(doorClose, transform.position);
     }
 }

@@ -27592,6 +27592,7 @@ MonoBehaviour:
   player: {fileID: 1477187217}
   playerMouse: {fileID: 1477187218}
   focusObject: {fileID: 5934173706685573317}
+  speaking: {fileID: 8300000, guid: b28169ada6d1c484d897e14a8b36c144, type: 3}
   repeatable: 0
   focusSpeed: 20
   dialogInitiated: 0
@@ -27678,8 +27679,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05231276c746e53459fe6a489ce58747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpen: {fileID: 0}
-  doorClose: {fileID: 0}
+  doorOpen: {fileID: 8300000, guid: 1a96e5398d003a9438d62d15b3612b67, type: 3}
+  doorClose: {fileID: 8300000, guid: aef5c4bb57fd01d40b6d8296b607f86d, type: 3}
 --- !u!114 &7420928894835960595
 MonoBehaviour:
   m_ObjectHideFlags: 0

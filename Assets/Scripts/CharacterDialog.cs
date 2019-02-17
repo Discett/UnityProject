@@ -16,6 +16,7 @@ public class CharacterDialog : MonoBehaviour
     public PlayerMovementCC player;
     public MouseLook playerMouse;
     public Transform focusObject;
+    public AudioClip speaking;
     public bool repeatable = false;
     public float focusSpeed = 20f;
 
@@ -51,6 +52,11 @@ public class CharacterDialog : MonoBehaviour
     public void setFocusObject(Transform focus)
     {
         focusObject = focus;
+    }
+
+    public void onSpeak()
+    {
+        AudioSource.PlayClipAtPoint(speaking,transform.position);
     }
 
     // Update is called once per frame

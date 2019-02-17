@@ -12,6 +12,11 @@ public class MosiahSelanieMeeting : MonoBehaviour
     public Animator mosiah;
     public Animator selanie;
     public Animator door;
+    public AudioClip audioDoorSlam;
+    public AudioClip audioDoorOpen;
+    public AudioClip mosiahSpeak;
+    public AudioClip selanieSpeak;
+    public AudioSource knocking;
     public string promptText = "Press \"Use\" to answer the door";
     private bool mosiahFinished = false;
 
@@ -29,22 +34,31 @@ public class MosiahSelanieMeeting : MonoBehaviour
             inRange = false;
         }
     }
-
+    void playAudioDoorOpen()
+    {
+        AudioSource.PlayClipAtPoint(audioDoorOpen, door.targetPosition);
+    }
     private void MosiahTalk()
     {
         mosiah.SetBool("isTalking", true);
+        AudioSource.PlayClipAtPoint(mosiahSpeak,mosiah.targetPosition);
         dialogMosiah.startDialog();
     }
 
     private void SelanieTalk()
     {
         selanie.SetBool("isTalking", true);
+        AudioSource.PlayClipAtPoint(selanieSpeak, selanie.targetPosition);
         dialogSelanie.startDialog();
     }
     private void characterExit()
     {
         mosiah.SetBool("isTalking", false);
         selanie.SetBool("isTalking", false);
+    }
+    private void Start()
+    {
+        knocking.Play();
     }
     void Update()
     {
@@ -55,6 +69,7 @@ public class MosiahSelanieMeeting : MonoBehaviour
 
         if (inRange && Input.GetButtonDown("Use"))
         {
+            knocking.Stop();
             prompt.setPromptText("");
             mosiah.SetBool("Mosiah&SelanieMeeting", true);
             selanie.SetBool("Mosiah&SelanieMeeting", true);
@@ -71,6 +86,7 @@ public class MosiahSelanieMeeting : MonoBehaviour
         if (dialogSelanie.isDialogFinished())
         {
             FindObjectOfType<GameManager>().triggeredMosiahSelanieGreeting();
+            AudioSource.PlayClipAtPoint(audioDoorSlam,door.targetPosition);
             door.SetBool("open", false);
             Invoke("characterExit", 120f);
             this.enabled = false;

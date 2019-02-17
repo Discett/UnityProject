@@ -45,4 +45,9 @@ public class GameManager : MonoBehaviour
     {
         return mosiahSelanieGreeting;
     }
+
+    public void endGame()
+    {
+        Application.Quit();
+    }
 }

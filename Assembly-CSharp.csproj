@@ -63,6 +63,7 @@
     <Compile Include="Assets\EventManager.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\LoadApartment.cs" />
+    <Compile Include="Assets\Menu.cs" />
     <Compile Include="Assets\Scripts\CharacterDialog.cs" />
     <Compile Include="Assets\Scripts\EventMabeFridgeDoor.cs" />
     <Compile Include="Assets\Scripts\MabeBedEvent.cs" />

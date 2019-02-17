@@ -16,7 +16,14 @@ public class SleepingEvent : MonoBehaviour
     public Animator doorAnimator;
     public Animator visitor;
     public CharacterDialog visitorDialog;
+    public AudioClip audioDoorAjar;
+    public AudioClip visitorTalk;
     bool inRange = false;
+
+    public void playAudioDoorAjar()
+    {
+        AudioSource.PlayClipAtPoint(audioDoorAjar,doorAnimator.targetPosition);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,11 +45,17 @@ public class SleepingEvent : MonoBehaviour
     }
     public void startVisitorDialog()
     {
+        AudioSource.PlayClipAtPoint(visitorTalk, visitor.targetPosition);
         visitorDialog.startDialog();
+    }
+    public void endGame()
+    {
+        gm.endGame();
     }
     public void visitorEvent()
     {
         doorAnimator.SetTrigger("visitor");
+        playAudioDoorAjar();
         visitor.SetTrigger("start");
         Invoke("startVisitorDialog",2f);
     }
@@ -64,6 +77,11 @@ public class SleepingEvent : MonoBehaviour
             } else
             {
                 dialog.startDialog();
+            }
+
+            if (dialog.isDialogFinished())
+            {
+                Invoke("endGame", 5f);
             }
         }
     }

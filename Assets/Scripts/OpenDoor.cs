@@ -12,16 +12,6 @@ public class OpenDoor : MonoBehaviour
     bool inRange = false;
     private Animator animator;
 
-    public void audioPlayOpen()
-    {
-        AudioSource.PlayClipAtPoint(doorOpen,transform.position);
-    }
-
-    public void audioPlayClose()
-    {
-        AudioSource.PlayClipAtPoint(doorClose, transform.position);
-    }
-
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -41,6 +31,16 @@ public class OpenDoor : MonoBehaviour
         {
             inRange = false;
         }
+    }
+
+    public void audioPlayOpen()
+    {
+        AudioSource.PlayClipAtPoint(doorOpen, transform.position);
+    }
+
+    public void audioPlayClose()
+    {
+        AudioSource.PlayClipAtPoint(doorClose, transform.position);
     }
 
     private void Update()

@@ -31,4 +31,5 @@ public class MabeBedEvent : MonoBehaviour
             mabe.SetBool("isTalking", false);
         }
     }
+
 }
